@@ -18,7 +18,7 @@ The standing 122B server occupies both GPUs. `scripts/start-comfyui-wsl.sh` stop
 - ComfyUI v0.33.1, Windows PyTorch 2.13.0 + CUDA 13.0
 - Agent Panel installed at `custom_nodes/comfyui-agent-panel`
 - Codex MCP pinned to `comfyui-mcp@0.52.100`, explicit path/URL, compact mode
-- Local endpoint remains `http://127.0.0.1:8001/v1`, model `keying-deep`
+- Agent Panel defaults separately to `http://127.0.0.1:8001/v1`, model `keying-deep`
 
 ## Run
 
@@ -29,6 +29,8 @@ The standing 122B server occupies both GPUs. `scripts/start-comfyui-wsl.sh` stop
 
 Then open <http://127.0.0.1:8188>. Stop with Ctrl-C; the script restores `keying-122b.service` and waits for `/health`.
 
+The panel is already seeded to **Custom endpoint → keying-deep**. This is intentionally separate from Codex's own MCP/provider settings.
+
 LTX-2.5 is gated. First accept its license on Hugging Face and log in with the ComfyUI venv's `hf.exe`, then run:
 
 ```bash
@@ -38,4 +40,3 @@ LTX-2.5 is gated. First accept its license on Hugging Face and log in with the C
 Use the built-in LTX-2.5 distilled workflow, the NVFP4 transformer, INT8 text encoder, lighter convolutional video VAE, and native dynamic offload. Do not enable `--highvram` for this pack.
 
 See [report-source.md](report-source.md) for the evidence, model queue, caveats, and decision rationale.
-

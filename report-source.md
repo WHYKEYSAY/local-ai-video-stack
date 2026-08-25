@@ -77,6 +77,8 @@ The ComfyUI MCP project states tool calling is mandatory and recommends thinking
 
 Changing the Codex model provider does not automatically configure the panel backend.
 
+The installed default-user settings were seeded with backend `custom`, base URL `http://127.0.0.1:8001/v1`, and model `keying-deep`. No API key is stored because the loopback server does not require one.
+
 ## Operating policy
 
 - Render lane: 5090 only, `--cuda-device 0`, reserve 1.5 GB, default dynamic VRAM, no previews.

@@ -1,0 +1,6 @@
+{
+  "comfyui-mcp.defaultBackend": "custom",
+  "comfyui-mcp.custom.baseUrl": "http://127.0.0.1:8001/v1",
+  "comfyui-mcp.defaultModel.custom": "keying-deep"
+}
+

@@ -1,0 +1,30 @@
+{
+  "comfyui": {
+    "version": "0.33.1",
+    "endpoint": "http://127.0.0.1:8188",
+    "device": "cuda:0 NVIDIA GeForce RTX 5090 : cudaMallocAsync",
+    "dynamic_vram": true,
+    "native_nodes_verified": [
+      "LTXAVTextEncoderLoader",
+      "LTXVConditioning",
+      "LTXVAudioVAELoader",
+      "LTXVLatentUpsampler",
+      "EmptyMiniMaxH3LatentAV",
+      "MiniMaxH3ImageToVideo",
+      "MiniMaxH3ReferenceToVideo"
+    ]
+  },
+  "mcp": {
+    "name": "comfyui-mcp",
+    "version": "0.52.100",
+    "protocol": "2025-06-18",
+    "tools": ["list_tools", "describe_tool", "call_tool"],
+    "catalog_tools": 38
+  },
+  "restore": {
+    "endpoint": "http://127.0.0.1:8001",
+    "model": "keying-deep",
+    "healthy": true
+  }
+}
+

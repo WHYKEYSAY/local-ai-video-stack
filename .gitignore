@@ -1,6 +1,6 @@
 results/*.json
 results/*.log
+!results/preflight-*.json
 *.mp4
 *.png
 *.jpg
-
