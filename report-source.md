@@ -79,6 +79,8 @@ Changing the Codex model provider does not automatically configure the panel bac
 
 The installed default-user settings were seeded with backend `custom`, base URL `http://127.0.0.1:8001/v1`, and model `keying-deep`. No API key is stored because the loopback server does not require one.
 
+A direct OpenAI-compatible acceptance call against that exact endpoint returned `finish_reason=tool_calls` and a valid `get_weather({"city":"Toronto"})` invocation. This verifies the hard tool-calling prerequisite before the panel is asked to drive the catalog.
+
 ## Operating policy
 
 - Render lane: 5090 only, `--cuda-device 0`, reserve 1.5 GB, default dynamic VRAM, no previews.

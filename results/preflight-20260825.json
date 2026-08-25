@@ -21,10 +21,18 @@
     "tools": ["list_tools", "describe_tool", "call_tool"],
     "catalog_tools": 38
   },
+  "panel_model": {
+    "endpoint": "http://127.0.0.1:8001/v1",
+    "model": "keying-deep",
+    "tool_smoke": {
+      "finish_reason": "tool_calls",
+      "name": "get_weather",
+      "arguments": {"city": "Toronto"}
+    }
+  },
   "restore": {
     "endpoint": "http://127.0.0.1:8001",
     "model": "keying-deep",
     "healthy": true
   }
 }
-
