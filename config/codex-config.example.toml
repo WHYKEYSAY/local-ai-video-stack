@@ -1,0 +1,17 @@
+[mcp_servers.comfyui]
+command = "cmd.exe"
+args = ["/d", "/s", "/c", "npx -y comfyui-mcp@0.52.100 --compact --comfyui-url http://127.0.0.1:8188"]
+startup_timeout_sec = 60
+tool_timeout_sec = 300
+
+[mcp_servers.comfyui.env]
+COMFYUI_PATH = "C:\\Users\\whyke\\Documents\\comfy\\ComfyUI"
+COMFYUI_URL = "http://127.0.0.1:8188"
+COMFYUI_MCP_TOOL_MODE = "compact"
+
+[model_providers.keying-local]
+name = "Keying local llama.cpp"
+base_url = "http://127.0.0.1:8001/v1"
+wire_api = "responses"
+requires_openai_auth = false
+

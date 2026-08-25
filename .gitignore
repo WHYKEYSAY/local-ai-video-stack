@@ -1,0 +1,6 @@
+results/*.json
+results/*.log
+*.mp4
+*.png
+*.jpg
+
