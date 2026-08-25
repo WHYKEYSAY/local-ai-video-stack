@@ -19,6 +19,7 @@ The standing 122B server occupies both GPUs. `scripts/start-comfyui-wsl.sh` stop
 - Agent Panel installed at `custom_nodes/comfyui-agent-panel`
 - Codex MCP pinned to `comfyui-mcp@0.52.100`, explicit path/URL, compact mode
 - Agent Panel defaults separately to `http://127.0.0.1:8001/v1`, model `keying-deep`
+- Qwen3.8-27B Q5 + vision independently verified on the 5090 at 63–65 tok/s; see the [experiment repo](https://github.com/WHYKEYSAY/serve-qwen3.8-27b)
 
 ## Run
 

@@ -68,6 +68,8 @@ Artificial Analysis currently ranks Qwen3.8-27B at 52 in its xhigh setting, far 
 | 3 | Ling-3.0-flash Q4 | Interesting sparse 124B/5.1B-active model; official llama.cpp recipe exists, but total weights still exceed one card and it is not video-specific |
 | skip local | Kimi K3, Qwen3.8 2.4T, DeepSeek V4 Pro | Top leaderboard entries, but 1.6–2.8T total weights are physically inappropriate here |
 
+Qwen3.8-27B was then tested, not merely shortlisted. With a 19.68 GB Q5_K_S GGUF and 0.93 GB BF16 vision projector on the RTX 5090, llama.cpp b9733 recorded 21,161 MiB used after load and 63.24 tok/s on a 256-token native completion. Constrained Chinese, constrained Python, native OpenAI tool calling, and vision all passed at roughly 64–65 tok/s. Cold loading from D: through WSL 9p took about 12 minutes, so it is a strong exclusive-window planner/reviewer rather than a model to reload between every video shot. Raw evidence and the reproducible launcher are in the [Qwen3.8 experiment repository](https://github.com/WHYKEYSAY/serve-qwen3.8-27b).
+
 The ComfyUI MCP project states tool calling is mandatory and recommends thinking and vision. Compact mode exposes only `list_tools`, `describe_tool`, and `call_tool`, which is the correct schema budget for local models. Its own Gemma4 fine-tune was trained on 1,055 server-verified trajectories, but current published rungs are text-only. [comfyui-mcp](https://github.com/artokun/comfyui-mcp), [local fine-tune guidance](https://github.com/artokun/comfyui-mcp/blob/main/plugin/skills/local-llm-free/SKILL.md)
 
 ## Two different integrations
