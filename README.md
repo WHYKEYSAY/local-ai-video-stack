@@ -21,6 +21,22 @@ The standing 122B server occupies both GPUs. `scripts/start-comfyui-wsl.sh` stop
 - Agent Panel defaults separately to `http://127.0.0.1:8001/v1`, model `keying-deep`
 - Qwen3.8-27B Q5 + vision independently verified on the 5090 at a 100.9 tok/s five-test mean with MTP2; see the [experiment repo](https://github.com/WHYKEYSAY/serve-qwen3.8-27b)
 
+## Verified MiniMax H3 image-to-video workflow
+
+The repository now includes a local, credit-free MiniMax H3 I2V workflow at
+[`workflows/minimax-h3/minimax-h3-i2v.json`](workflows/minimax-h3/minimax-h3-i2v.json).
+It was validated on the Windows ComfyUI instance above and produced a 73-frame,
+24 fps test clip at 1280 × 736 without the generic-KSampler latent error.
+
+Use the workflow as a complete graph. Do not connect the H3 diffusion model to
+`EmptySD3LatentImage -> KSampler`: H3 is a joint audio/video model and expects
+paired video and audio latents. That incorrect graph fails in
+`comfy/ldm/minimax/model.py` at `audio_src = x[1]`.
+
+See [`workflows/minimax-h3/README.md`](workflows/minimax-h3/README.md) for model
+placement, local MCP operation, reproducible settings, and anti-ghosting prompt
+guidance.
+
 ## Run
 
 ```bash

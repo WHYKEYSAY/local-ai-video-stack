@@ -1,6 +1,30 @@
+# Keep only reviewed preflight records from local result directories.
 results/*.json
 results/*.log
 !results/preflight-*.json
+
+# Never commit model weights or generated/private media.
+*.safetensors
+*.ckpt
+*.pt
+*.pth
+*.gguf
 *.mp4
+*.mov
+*.webm
+*.wav
+*.flac
 *.png
 *.jpg
+
+# Local ComfyUI inputs and outputs.
+input/
+output/
+temp/
+
+# Credentials and local-only configuration.
+.env
+.env.*
+!*example*
+*credentials*
+*secret*
